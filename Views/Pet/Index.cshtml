@@ -1,0 +1,26 @@
+@page
+@{
+    var _arrayPet = ViewBag.PetList as IEnumerable<evalucion_bayteq.Models.PetModel>;
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NOMBRE MASCOTA</th>
+            <th scope="col">ESTADO</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var pet in _arrayPet)
+            {
+                <tr>
+                    <td>@pet.id</td>
+                    <td>@pet.name</td>
+                    <td>@pet.status</td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>
